@@ -45,5 +45,20 @@ int main() {
 		std::cout << i << "\n";
 	}
 
+	std::map<unsigned int, unsigned int> amout_of_numbers;
+	
+	for (int i : vector) {
+		if (amout_of_numbers.find(i) == amout_of_numbers.end()) {
+			amout_of_numbers[i] = 1;
+		}
+		else {
+			amout_of_numbers[i] += 1;
+		}
+	}
+
+	for (auto const& pair_of_ints : amout_of_numbers) {
+		std::cout << pair_of_ints.first << " is inside the list " << pair_of_ints.second << " times." << std::endl;
+	}
+
 	return 0;
 }

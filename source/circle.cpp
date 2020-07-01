@@ -7,6 +7,7 @@ float Circle::circumference(){
     return result;
 }
 
+/*
 void Circle::draw(Window const& w, float thickness) const{
     for(int i = 0; i < 360; ++i){
         float g1 = i * M_PI / 180.0;
@@ -16,6 +17,7 @@ void Circle::draw(Window const& w, float thickness) const{
     }
     return;
 }
+*/
 
 bool Circle::is_inside(Vec2 const& v){
     float distance_to_center = sqrt(pow((v.x - center_.x), 2) + pow((v.y - center_.y), 2));
@@ -23,4 +25,16 @@ bool Circle::is_inside(Vec2 const& v){
         return true;
     }
     return false;
+}
+
+bool Circle::operator<(Circle const& circle) const {
+    return(radius_ < circle.radius_);
+} 
+
+bool Circle::operator>(Circle const& circle) const {
+    return(radius_ > circle.radius_);
+}
+
+bool Circle::operator==(Circle const& circle) const {
+    return(radius_ == circle.radius_);
 }

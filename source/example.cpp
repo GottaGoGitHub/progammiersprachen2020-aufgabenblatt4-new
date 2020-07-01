@@ -57,14 +57,14 @@ int main(int argc, char* argv[])
 
     Circle c{v3, 100.0, blue};
     circ_vector.push_back(c);
-    c.draw(win, 2.0f);
+    //c.draw(win, 2.0f);
 
     Vec2 mp{mouse_position.first, mouse_position.second};
     if(rec.is_inside(mp) == true){
       rec.draw(win, 3.0);
     }
     if(c.is_inside(mp) == true){
-      c.draw(win, 4.0);
+      //c.draw(win, 4.0);
     }
 
     win.draw_line(0, mouse_position.second, 10, mouse_position.second, 0.0, 0.0, 0.0);

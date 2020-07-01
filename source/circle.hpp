@@ -14,8 +14,12 @@ class Circle{
         center_{v1}, radius_{radius}, color_{color}{}
 
         float circumference();
-        void draw(Window const& w, float thickness = 1.0f) const;
+        //void draw(Window const& w, float thickness = 1.0f) const;
         bool is_inside(Vec2 const& v);
+
+        bool operator<(Circle const& circle) const;
+        bool operator>(Circle const& circle) const;
+        bool operator==(Circle const& circle) const;
         
     private:
         Vec2 center_;
