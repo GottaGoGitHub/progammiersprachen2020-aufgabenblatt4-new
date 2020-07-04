@@ -33,9 +33,17 @@ add_executable(aufgabe_2_und_3
 
 add_executable(aufgabe_5
   vec2.cpp
+  mat2.cpp
+  aufgabe_5.cpp
   circle.cpp
-  aufgabe_5.cpp 
-)
+  )
+add_executable(aufgabe_6
+  vec2.cpp
+  mat2.cpp
+  aufgabe_6.cpp
+  circle.cpp
+  )
+
 
 target_link_libraries(tests
   glfw
@@ -44,4 +52,12 @@ target_link_libraries(tests
   ${OPENGL_LIBRARIES}
   )
 
-
+  add_executable(aufgabe_8
+  aufgabe_8.cpp
+  )
+target_link_libraries(aufgabe_8
+  glfw
+  ${GLFW_LIBRARIES}
+  nanovg
+  ${OPENGL_LIBRARIES}
+  )

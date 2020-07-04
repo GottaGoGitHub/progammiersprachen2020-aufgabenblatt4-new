@@ -2,7 +2,7 @@
 #include "circle.hpp"
 #include <cmath>
 
-float Circle::circumference(){
+float Circle::circumference() const{
     float result = 2 * M_PI * radius_;
     return result;
 }

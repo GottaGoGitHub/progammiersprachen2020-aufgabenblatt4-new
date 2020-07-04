@@ -13,7 +13,7 @@ class Circle{
         Circle(Vec2 const& v1, float radius, Color const& color):
         center_{v1}, radius_{radius}, color_{color}{}
 
-        float circumference();
+        float circumference() const;
         //void draw(Window const& w, float thickness = 1.0f) const;
         bool is_inside(Vec2 const& v);
 

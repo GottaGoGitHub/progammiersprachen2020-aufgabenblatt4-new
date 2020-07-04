@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <list>
 
 
 int main() {
@@ -18,11 +19,19 @@ int main() {
     Circle circle2{ center2, 200, color2 };
     Circle circle3{ center3, 50, color3 };
 
-    std::vector<Circle> sorted_circles{ circle1, circle2, circle3 };
-    std::sort(sorted_circles.begin(), sorted_circles.end());
+    std::list<Circle> sorted_circles;
+    sorted_circles.push_back(circle1);
+    sorted_circles.push_back(circle2);
+    sorted_circles.push_back(circle3);
+    auto sorting_lambda = [](Circle const& lhs, Circle const& rhs)->bool {
+        return(lhs.circumference() < rhs.circumference());
+    };
 
-    if (std::is_sorted(sorted_circles.begin(), sorted_circles.end()) == true) {
-        std::cout << "Vector is sorted\n";
+    sorted_circles.sort(sorting_lambda);
+
+    
+    if(std::is_sorted(sorted_circles.begin(), sorted_circles.end()) == true) {
+        std::cout << "Vector is sorted via lambda\n";
     }
     else {
         std::cout << "Vector is not sorted\n";
