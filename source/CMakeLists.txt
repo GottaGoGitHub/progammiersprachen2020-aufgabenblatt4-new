@@ -61,3 +61,13 @@ target_link_libraries(aufgabe_8
   nanovg
   ${OPENGL_LIBRARIES}
   )
+
+add_executable(aufgabe_10
+  aufgabe_10.cpp
+  )
+target_link_libraries(aufgabe_10
+  glfw
+  ${GLFW_LIBRARIES}
+  nanovg
+  ${OPENGL_LIBRARIES}
+  )
