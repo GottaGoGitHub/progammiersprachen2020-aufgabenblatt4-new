@@ -1,11 +1,10 @@
-#include <list>
+#include <vector>
 #include <set>
 #include <map>
-#include <vector>
 #include <iostream>
-#include <time.h>
-#include <stdlib.h>
-#include<iostream>
+#include <iomanip>
+#include <list>
+#include <iterator>
 
 int main() {
 	std::cout << "aufgabe 2\n";
@@ -59,6 +58,23 @@ int main() {
 	for (auto const& pair_of_ints : amout_of_numbers) {
 		std::cout << pair_of_ints.first << " is inside the list " << pair_of_ints.second << " times." << std::endl;
 	}
+
+	//task 9
+	std::list<int> list_1;
+
+	std::copy(std::begin(vector), std::end(vector), std::back_inserter(list_1));
+
+	std::cout << "Vector:\n";
+	std::copy(std::cbegin(vector) + 90, std::cend(vector), std::ostream_iterator<int>(std::cout, ", "));
+	std::cout << "\n";
+
+	auto start = std::begin(list_1);
+	for (int i = 1; i <= 90; ++i) {
+		start++;
+	}
+	std::cout << "List:" << std::endl;
+	std::copy(start, std::end(list_1), std::ostream_iterator<int>(std::cout, ", "));
+	std::cout << std::endl;
 
 	return 0;
 }
